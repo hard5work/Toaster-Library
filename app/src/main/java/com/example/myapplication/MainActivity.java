@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.motion.toasterlibrary.CustomAlertDialog;
 import com.motion.toasterlibrary.ToasterMessage;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +16,11 @@ import android.view.View;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.Toast;
+
+import static android.content.DialogInterface.BUTTON_NEGATIVE;
+import static android.content.DialogInterface.BUTTON_POSITIVE;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,24 +41,8 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               /* Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();*/
-               toasterMessage.simpleToast(getApplicationContext(),TAG);
-               toasterMessage.simpleToast(getApplicationContext(),tag);
-                toasterMessage.showUserChoice(c,tag,getResources().getDrawable(R.drawable.ic_launcher_foreground));
-               toasterMessage.showSuccessToast(getApplicationContext(),tag);
-               toasterMessage.setGravity(Gravity.TOP,0,0);
-               toasterMessage.setDuration(Toast.LENGTH_LONG);
-               toasterMessage.showErrorToast(getApplicationContext(),TAG);
-                toasterMessage.setGravity(Gravity.RIGHT,0,150);
-                toasterMessage.setDuration(Toast.LENGTH_SHORT);
-               toasterMessage.showWarningToast(getApplicationContext(),tag);
-                toasterMessage.setGravity(Gravity.LEFT,100,0);
-               toasterMessage.showUserChoice(c,tag,getResources().getColor(R.color.activetext));
-                toasterMessage.setGravity(Gravity.CENTER,0,0);
-               toasterMessage.showUserChoice(c,tag,getResources().getColor(R.color.inactive),getResources().getColor(R.color.backgrey));
-               toasterMessage.showUserChoice(c,tag,getResources().getColor(R.color.colorAccent), getResources().getDrawable(R.drawable.ic_launcher_background),getResources().getColor(R.color.backgrey));
-
+              customAlertDialogs();
+              //customToasts();
             }
         });
     }
@@ -78,5 +67,39 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    public void customToasts(){
+         /* Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();*/
+        toasterMessage.simpleToast(getApplicationContext(),TAG);
+        toasterMessage.simpleToast(getApplicationContext(),tag);
+        toasterMessage.showUserChoice(c,tag,getResources().getDrawable(R.drawable.ic_launcher_foreground));
+        toasterMessage.showSuccessToast(getApplicationContext(),tag);
+        toasterMessage.setGravity(Gravity.TOP,0,0);
+        toasterMessage.setDuration(Toast.LENGTH_LONG);
+        toasterMessage.showErrorToast(getApplicationContext(),TAG);
+        toasterMessage.setGravity(Gravity.RIGHT,0,150);
+        toasterMessage.setDuration(Toast.LENGTH_SHORT);
+        toasterMessage.showWarningToast(getApplicationContext(),tag);
+        toasterMessage.setGravity(Gravity.LEFT,100,0);
+        toasterMessage.showUserChoice(c,tag,getResources().getColor(R.color.activetext));
+        toasterMessage.setGravity(Gravity.CENTER,0,0);
+        toasterMessage.showUserChoice(c,tag,getResources().getColor(R.color.inactive),getResources().getColor(R.color.backgrey));
+        toasterMessage.showUserChoice(c,tag,getResources().getColor(R.color.colorAccent), getResources().getDrawable(R.drawable.ic_launcher_background),getResources().getColor(R.color.backgrey));
+
+    }
+
+    public void customAlertDialogs(){
+        new CustomAlertDialog.Builder(this)
+                .setMessage("This is Test")
+                .setTitle("Test")
+                .setCancelable(false)
+                .setPositiveButton("OK",(dialog, which) -> dialog.dismiss())
+                .setNegativeButton("CANCEL",(dialog, which) -> dialog.dismiss())
+                .setHighlightButtonColorNegative(getResources().getColor(R.color.bus_booked))
+                .setHighlightButtonColorPositive(getResources().getColor(R.color.colorGreen))
+                .setAlertImage(getResources().getDrawable(android.R.drawable.arrow_up_float),getResources().getColor(R.color.colorYellow))
+                .setAlertImage(getResources().getDrawable(android.R.drawable.alert_dark_frame))
+                .show();
     }
 }
