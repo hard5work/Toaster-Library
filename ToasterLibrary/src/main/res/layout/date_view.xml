@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:layout_marginStart="@dimen/form_left_right_margin"
+    android:layout_marginEnd="@dimen/form_left_right_margin"
+    app:layout_constraintHorizontal_weight="8"
+    >
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/date_format"
+        android:layout_width="60dp"
+        android:layout_height="45dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="center"
+        android:text="AD"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/date_year_layout"
+        app:layout_constraintTop_toTopOf="@id/date_year_layout"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/date_year_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:hint="YYYY"
+        app:layout_constraintHorizontal_weight="3"
+        app:layout_constraintLeft_toRightOf="@id/date_format"
+        app:layout_constraintRight_toLeftOf="@id/date_month_layout"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/date_year"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:maxLength="4"
+            android:selectAllOnFocus="true"
+            android:textSize="16sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:id="@+id/date_month_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintHorizontal_weight="2"
+        android:hint="MM"
+        app:layout_constraintLeft_toRightOf="@id/date_year_layout"
+        app:layout_constraintRight_toLeftOf="@id/date_day_layout"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:textSize="16sp"
+            android:id="@+id/date_month"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:selectAllOnFocus="true"
+            android:maxLength="2"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:id="@+id/date_day_layout"
+        android:layout_width="0dp"
+        app:layout_constraintHorizontal_weight="2"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:hint="DD"
+        app:layout_constraintLeft_toRightOf="@id/date_month_layout"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintRight_toRightOf="parent"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:textSize="16sp"
+            android:id="@+id/date_day"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:selectAllOnFocus="true"
+            android:maxLength="2"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

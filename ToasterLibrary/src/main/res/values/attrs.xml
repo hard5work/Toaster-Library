@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DateView">
+        <attr name="default_year" format="string"/>
+        <attr name="default_month" format="string"/>
+        <attr name="default_day" format="string"/>
+        <attr name="fixed_format" format="boolean"/>
+        <attr name="default_format" format="enum">
+            <enum name="AD" value="0" />
+            <enum name="BS" value="1" />
+        </attr>
+
+    </declare-styleable>
+</resources>
