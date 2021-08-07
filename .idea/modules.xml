@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/My_Application.iml" filepath="$PROJECT_DIR$/.idea/modules/My_Application.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ToasterLibrary/My_Application.ToasterLibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/ToasterLibrary/My_Application.ToasterLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/My_Application.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/My_Application.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mylibrary/My_Application.mylibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/mylibrary/My_Application.mylibrary.iml" />
     </modules>
   </component>
 </project>
