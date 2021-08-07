@@ -6,11 +6,13 @@ import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.motion.toasterlibrary.CustomAlertDialog;
+import com.motion.toasterlibrary.CustomProgressDialog;
 import com.motion.toasterlibrary.ToasterMessage;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.os.CountDownTimer;
 import android.view.Gravity;
 import android.view.View;
 
@@ -41,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              customAlertDialogs();
+            //  customAlertDialogs();
+                progressDialogss();
               //customToasts();
             }
         });
@@ -101,5 +104,35 @@ public class MainActivity extends AppCompatActivity {
                 .setAlertImage(getResources().getDrawable(android.R.drawable.arrow_up_float),getResources().getColor(R.color.colorYellow))
                 .setAlertImage(getResources().getDrawable(android.R.drawable.alert_dark_frame))
                 .show();
+    }
+
+    public void progressDialogss(){
+       /* CustomProgressDialog.Builder buid  = new CustomProgressDialog.Builder(this);
+               buid.setCancelable(false);
+               buid.show();*/
+
+
+  /*   new  CustomProgressDialog(this)
+             .setTitle("Success")
+             .setMessage("Test is Successful, Enjoy")
+             .isCancelable(false)
+             .show();*/
+        CustomProgressDialog sp = new CustomProgressDialog(this);
+       // sp.setTitle("ProgressDialog");
+       // sp.setMessage("Loading..");
+        sp.isCancelable(false);
+        sp.show();
+
+        CountDownTimer timer = new CountDownTimer(10000,1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+
+            }
+
+            @Override
+            public void onFinish() {
+                sp.dismiss();
+            }
+        }.start();
     }
 }
