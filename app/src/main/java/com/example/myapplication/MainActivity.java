@@ -1,33 +1,59 @@
 package com.example.myapplication;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.motion.toasterlibrary.ToasterMessage;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.view.Gravity;
 import android.view.View;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    ToasterMessage toasterMessage;
+    String TAG = "MainActivity";
+    String tag = "MainActivity MainActivity MainActivity MainActivity MainActivity MainActivity MainActivity MainActivity MainActivity";
+    Context c;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        c = MainActivity.this;
 
+        toasterMessage =  new ToasterMessage(MainActivity.this);
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+               /* Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();*/
+               toasterMessage.simpleToast(getApplicationContext(),TAG);
+               toasterMessage.simpleToast(getApplicationContext(),tag);
+                toasterMessage.showUserChoice(c,tag,getResources().getDrawable(R.drawable.ic_launcher_foreground));
+               toasterMessage.showSuccessToast(getApplicationContext(),tag);
+               toasterMessage.setGravity(Gravity.TOP,0,0);
+               toasterMessage.setDuration(Toast.LENGTH_LONG);
+               toasterMessage.showErrorToast(getApplicationContext(),TAG);
+                toasterMessage.setGravity(Gravity.RIGHT,0,150);
+                toasterMessage.setDuration(Toast.LENGTH_SHORT);
+               toasterMessage.showWarningToast(getApplicationContext(),tag);
+                toasterMessage.setGravity(Gravity.LEFT,100,0);
+               toasterMessage.showUserChoice(c,tag,getResources().getColor(R.color.activetext));
+                toasterMessage.setGravity(Gravity.CENTER,0,0);
+               toasterMessage.showUserChoice(c,tag,getResources().getColor(R.color.inactive),getResources().getColor(R.color.backgrey));
+               toasterMessage.showUserChoice(c,tag,getResources().getColor(R.color.colorAccent), getResources().getDrawable(R.drawable.ic_launcher_background),getResources().getColor(R.color.backgrey));
+
             }
         });
     }

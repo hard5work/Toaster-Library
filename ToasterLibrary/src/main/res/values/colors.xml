@@ -43,6 +43,8 @@ text = #B71C1C-->
 
     <color name="toastSuccess">#8064BC26</color>
     <color name="toastFailed">#8FEA1601</color>
+    <color name="toastInfo">#A8FAD202</color>
+    <color name="defaultToast">#AB090909</color>
 
     <color name="seat_available">#17C574</color>
     <color name="seat_selected">#FFDF60</color>
