@@ -24,7 +24,7 @@
         <ImageView
             android:id="@+id/alertImage"
             android:layout_margin="25dp"
-            android:scaleType="fitXY"
+            android:scaleType="centerInside"
             android:maxWidth="40dp"
             android:maxHeight="40dp"
             android:src="@android:drawable/arrow_up_float"
