@@ -14,7 +14,7 @@
         android:id="@+id/alertImageLayout"
         android:layout_width="0dp"
         android:gravity="center"
-        android:visibility="visible"
+        android:visibility="gone"
         android:background="@drawable/layout_background"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,13 +23,10 @@
         app:layout_constraintTop_toTopOf="parent">
         <ImageView
             android:id="@+id/alertImage"
-            android:layout_margin="25dp"
+            android:layout_margin="15dp"
             android:scaleType="centerInside"
-            android:maxWidth="40dp"
-            android:maxHeight="40dp"
-            android:src="@android:drawable/arrow_up_float"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
 
     </LinearLayout>
 
