@@ -38,6 +38,17 @@ import static java.lang.Integer.parseInt;
  * Fixes on date min and max date
  * Fixes on UI on AD BS
  */
+
+/**
+ If issued is occured Please Use this in Implementation
+
+ configurations {
+ cleanedAnnotations
+ compile.exclude group: 'org.jetbrains' , module:'annotations'
+ }
+
+
+ * */
 public class DateView extends LinearLayout {
 
     private static final String TAG = DateView.class.getSimpleName();

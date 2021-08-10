@@ -43,9 +43,9 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            //  customAlertDialogs();
+             // customAlertDialogs();
                 progressDialogss();
-              //customToasts();
+           //   customToasts();
             }
         });
     }
@@ -94,15 +94,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void customAlertDialogs(){
         new CustomAlertDialog.Builder(this)
-                .setMessage("This is Test")
                 .setTitle("Test")
                 .setCancelable(false)
                 .setPositiveButton("OK",(dialog, which) -> dialog.dismiss())
                 .setNegativeButton("CANCEL",(dialog, which) -> dialog.dismiss())
-                .setHighlightButtonColorNegative(getResources().getColor(R.color.bus_booked))
-                .setHighlightButtonColorPositive(getResources().getColor(R.color.colorGreen))
-                .setAlertImage(getResources().getDrawable(android.R.drawable.arrow_up_float),getResources().getColor(R.color.colorYellow))
-                .setAlertImage(getResources().getDrawable(android.R.drawable.alert_dark_frame))
+                .setHighlightButtonColorNegative(getResources().getColor(R.color.bus_selected))
+                .setHighlightButtonColorPositive(getResources().getColor(R.color.material_on_surface_disabled))
+                .setAlertImage(getResources().getDrawable(android.R.drawable.btn_dialog),getResources().getColor(R.color.colorAccent))
+             //   .setAlertImage(getResources().getDrawable(android.R.drawable.btn_dialog))
                 .show();
     }
 
@@ -118,9 +117,11 @@ public class MainActivity extends AppCompatActivity {
              .isCancelable(false)
              .show();*/
         CustomProgressDialog sp = new CustomProgressDialog(this);
-       // sp.setTitle("ProgressDialog");
-       // sp.setMessage("Loading..");
+      //  sp.setTitle("ProgressDialog");
+     //   sp.setMessage("Loading..");
         sp.isCancelable(false);
+        sp.setBackgroundColor(getResources().getColor(R.color.bus_selected));
+        sp.setIcon(getResources().getDrawable(android.R.drawable.arrow_up_float));
         sp.show();
 
         CountDownTimer timer = new CountDownTimer(10000,1000) {
