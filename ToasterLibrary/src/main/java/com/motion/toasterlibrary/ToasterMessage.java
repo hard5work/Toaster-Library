@@ -135,7 +135,7 @@ public class ToasterMessage  extends Toast {
     }
 
     /** User can send user choiced image and user choice background color */
-    public void showUserChoice(Context context, String customToast , int color, Drawable drawable) {
+    public void showUserChoiceBackground(Context context, String customToast , int color, int drawable) {
         toast = new Toast(context);
 
         toast.setGravity(Gravity.BOTTOM, 0, 130);
@@ -154,7 +154,7 @@ public class ToasterMessage  extends Toast {
 
 
     /** User can send user choiced image and user choice background color */
-    public void showUserChoice(Context context, String customToast , Drawable drawable) {
+    public void showUserChoiceBackground(Context context, String customToast , int drawable) {
         toast = new Toast(context);
 
         toast.setGravity(Gravity.BOTTOM, 0, 130);

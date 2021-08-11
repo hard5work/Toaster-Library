@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
              // customAlertDialogs();
                 progressDialogss();
-           //   customToasts();
+              //  customToasts();
             }
         });
     }
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();*/
         toasterMessage.simpleToast(getApplicationContext(),TAG);
         toasterMessage.simpleToast(getApplicationContext(),tag);
-        toasterMessage.showUserChoice(c,tag,getResources().getDrawable(R.drawable.ic_launcher_foreground));
+        toasterMessage.showUserChoiceBackground(c,tag,R.drawable.ic_launcher_foreground);
         toasterMessage.showSuccessToast(getApplicationContext(),tag);
         toasterMessage.setGravity(Gravity.TOP,0,0);
         toasterMessage.setDuration(Toast.LENGTH_LONG);
@@ -117,11 +117,15 @@ public class MainActivity extends AppCompatActivity {
              .isCancelable(false)
              .show();*/
         CustomProgressDialog sp = new CustomProgressDialog(this);
-      //  sp.setTitle("ProgressDialog");
-     //   sp.setMessage("Loading..");
+        sp.setTitle("ProgressDialog");
+       sp.setMessage("Loading..");
         sp.isCancelable(false);
-        sp.setBackgroundColor(getResources().getColor(R.color.bus_selected));
-        sp.setIcon(getResources().getDrawable(android.R.drawable.arrow_up_float));
+       sp.setBackgroundColor(getResources().getColor(R.color.bus_selected));
+   //     sp.setBackground(getResources().getColor(R.color.bus_selected));
+     //  sp.setIconGifWide();
+     //  sp.setwideStyleColor(getResources().getColor(R.color.white));
+       //sp.setBoth();
+      // sp.setIcon(getResources().getDrawable(android.R.drawable.arrow_up_float));
         sp.show();
 
         CountDownTimer timer = new CountDownTimer(10000,1000) {

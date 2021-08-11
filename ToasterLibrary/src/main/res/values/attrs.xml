@@ -11,4 +11,32 @@
         </attr>
 
     </declare-styleable>
+
+    <declare-styleable name="FormInputView">
+        <attr name="hint" format="string" />
+        <attr name="errorText" format="string" />
+        <attr name="required" format="boolean" />
+        <attr name="extra" format="string" />
+        <attr name="iconEnabled" format="boolean" />
+        <attr name="underlineColor" format="color" />
+        <attr name="min" format="integer" />
+        <attr name="max" format="integer" />
+
+        <attr name="inputType" format="enum">
+            <enum name="text" value="0"/>
+            <enum name="person_name" value="1"/>
+            <enum name="address" value="3"/>
+            <enum name="number" value="4"/>
+            <enum name="price" value="5"/>
+            <enum name="alpha_numeric" value="6"/>
+            <enum name="dropdown" value="7"/>
+            <enum name="url" value="8"/>
+            <enum name="mobile" value="9"/>
+            <enum name="landline" value="10"/>
+            <enum name="email" value="11"/>
+            <enum name="phone" value="12"/>
+            <enum name="ward" value="13"/>
+            <enum name ="password" value="14"/>
+        </attr>
+    </declare-styleable>
 </resources>

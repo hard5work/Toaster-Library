@@ -10,7 +10,9 @@ import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -25,6 +27,7 @@ public class CustomProgressDialog implements DialogInterface {
     private TextView tvTitle, tvMessage;
     //    private LinearLayout imageLayout;
     private ImageView alertImage;
+    private ProgressBar flatImage;
     private boolean cancellable;
 
     private View divider;
@@ -48,6 +51,8 @@ public class CustomProgressDialog implements DialogInterface {
         divider = view.findViewById(R.id.v1);
         //   imageLayout = view.findViewById(R.id.cp_pbar);
         alertImage = view.findViewById(R.id.cp_pbar);
+        flatImage = view.findViewById(R.id.cp_flat);
+        flatImage.setVisibility(View.GONE);
         dialog.setContentView(view);
         dialog.setCancelable(true);
         dialog.setCanceledOnTouchOutside(true);
@@ -74,11 +79,17 @@ public class CustomProgressDialog implements DialogInterface {
     }
 
     public CustomProgressDialog setIcon(Drawable drawable) {
+        alertImage.setVisibility(View.VISIBLE);
         Glide.with(activity).load(drawable).into(alertImage);
         return this;
     }
 
     public CustomProgressDialog setBackgroundColor(int color) {
+        background.getBackground().setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
+        return this;
+    }
+    public CustomProgressDialog setBackground(int color) {
+        background.setBackground(activity.getResources().getDrawable(R.drawable.round_dialog));
         background.getBackground().setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
         return this;
     }
@@ -94,8 +105,27 @@ public class CustomProgressDialog implements DialogInterface {
     }
 
     public CustomProgressDialog setIconGif(int drawable) {
-
+        alertImage.setVisibility(View.VISIBLE);
         Glide.with(activity).load(drawable).into(alertImage);
+        return this;
+    }
+
+    public CustomProgressDialog setIconGifWide() {
+        alertImage.setVisibility(View.GONE);
+        flatImage.setVisibility(View.VISIBLE);
+        return this;
+    }public CustomProgressDialog setBoth(){
+        alertImage.setVisibility(View.VISIBLE);
+        flatImage.setVisibility(View.VISIBLE);
+        return this;
+    }
+
+    public CustomProgressDialog setwideStyleColor(int color) {
+        alertImage.setVisibility(View.GONE);
+        flatImage.setVisibility(View.VISIBLE);
+
+        flatImage.getIndeterminateDrawable().setColorFilter(color, PorterDuff.Mode.SRC_IN);
+        flatImage.getProgressDrawable().setColorFilter(color, PorterDuff.Mode.SRC_IN);
         return this;
     }
 
