@@ -28,8 +28,9 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_round_add_to_home_screen_24" />
-                            <entry key="sourceFile" value="C:\Users\mah_a.DESKTOP-VGBPC4A\AndroidStudioProjects\MyApplication" />
+                            <entry key="assetSourceType" value="FILE" />
+                            <entry key="outputName" value="ic_asset_6" />
+                            <entry key="sourceFile" value="C:\Users\mah_a.DESKTOP-VGBPC4A\Downloads\SVG\Asset 6.svg" />
                           </map>
                         </option>
                       </PersistentState>
