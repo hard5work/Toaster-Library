@@ -11,7 +11,7 @@
     android:paddingEnd="35dp"
     tools:context=".FirstFragment">
 
-    <com.motion.toasterlibrary.FormInputLayout
+    <com.motion.toasterlibrary.productive.FormInputLayout
         android:layout_marginTop="10dp"
         android:id="@+id/customer_address"
         android:layout_width="match_parent"
@@ -24,14 +24,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:required="true"/>
 
-    <com.motion.toasterlibrary.FormInputLayout
+    <com.motion.toasterlibrary.productive.FormInputLayout
         android:id="@+id/firstForm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:inputType="text"
         app:hint="Random"
         />
-    <com.motion.toasterlibrary.FormInputLayout
+    <com.motion.toasterlibrary.productive.FormInputLayout
         android:id="@+id/asd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

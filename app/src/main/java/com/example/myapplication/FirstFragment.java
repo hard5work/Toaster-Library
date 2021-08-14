@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.motion.toasterlibrary.FormInputLayout;
+import com.motion.toasterlibrary.productive.FormInputLayout;
 
 public class FirstFragment extends Fragment {
 
