@@ -10,6 +10,7 @@ import com.motion.toasterlibrary.productive.ApiCore;
 import com.motion.toasterlibrary.productive.CustomAlertDialog;
 import com.motion.toasterlibrary.productive.CustomProgressDialog;
 import com.motion.toasterlibrary.productive.JsonUtils;
+import com.motion.toasterlibrary.productive.RequestAPI;
 import com.motion.toasterlibrary.productive.ToasterMessage;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -47,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
       // APIContracts.baseUrl = "https://stagesys.prabhupay.com/api/";
         APIContracts.baseUrl = "https://api.publicapis.org/";
         Log.e(TAG, "onCreate: " + APIContracts.baseUrl );
+
+
 
 /*{
   "username": "string",
@@ -241,6 +244,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
+
+
     public static Observable<JsonObject> test(Context context, JsonObject req){
         return ApiCore.send(context, APIContracts.APIName.User.test,req)
                 .map( res -> {

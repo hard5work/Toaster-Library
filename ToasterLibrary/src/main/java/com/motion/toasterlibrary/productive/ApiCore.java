@@ -3,6 +3,7 @@ package com.motion.toasterlibrary.productive;
 import android.content.Context;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
 import androidx.core.util.Pair;
 
 import com.google.gson.JsonElement;
@@ -84,7 +85,32 @@ public class ApiCore {
     public static  Observable<JsonObject> send(Context context,String urlName, JsonObject req){
         RequestMeta meta = getRequestMeta(urlName);
         return requestFactory(context,meta,req);
-    }   public static  Observable<JsonObject> send(Context context,String urlName, String className, JsonObject req){
+    }
+
+
+    /** Dynamic Urls Confirmations check */
+    public static Observable<JsonObject> send(Context context, String urlName, @NonNull JsonObject req, int method , boolean header , boolean body) {
+
+//        RequestMeta meta = getRequestMeta(urlName);
+        RequestMeta meta = getRequestMetaDynamic(urlName,method,header,body);
+        // create request based on current build name
+        return requestFactory(context, meta, req);
+    }
+
+    private static RequestMeta getRequestMetaDynamic(String urlName, int method, boolean header, boolean body) {
+        RequestMeta meta;
+        try {
+            // FIXME: 10/18/19 does not catch exception
+            meta = UrlsContracts.dynamicName(urlName, method, body, header);
+            if (meta == null)
+                throw new Exception("Null meta; RequestMeta was probably not defined");
+
+            return meta;
+        } catch (Exception e) {
+            throw new Error("No RequestMeta with name " + urlName + " found.");
+        }
+    }
+    public static  Observable<JsonObject> send(Context context,String urlName, String className, JsonObject req){
         RequestMeta meta = getRequestMeta(className,urlName);
         return requestFactory(context,meta,req);
     }
