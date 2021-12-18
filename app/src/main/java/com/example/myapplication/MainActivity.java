@@ -44,9 +44,10 @@ public class MainActivity extends AppCompatActivity {
      //   setSupportActionBar(toolbar);
         c = MainActivity.this;
 
-//        APIContracts.baseUrl = "https://stagesys.prabhupay.com/api/";
+      // APIContracts.baseUrl = "https://stagesys.prabhupay.com/api/";
         APIContracts.baseUrl = "https://api.publicapis.org/";
         Log.e(TAG, "onCreate: " + APIContracts.baseUrl );
+
 /*{
   "username": "string",
   "password": "string",
@@ -75,7 +76,23 @@ public class MainActivity extends AppCompatActivity {
         req.addProperty("manufacturer","");
         req.addProperty("requestFromFlag","0");
 
+      /*  login2(getApplicationContext(),req).subscribe(new DisposableObserver<JsonObject>() {
+            @Override
+            public void onNext(@NonNull JsonObject jsonObject) {
+                Log.e(TAG, "onNext: " + jsonObject );
+            }
 
+            @Override
+            public void onError(@NonNull Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+*/
     /*   login(getApplicationContext(),req).subscribe(new DisposableObserver<JsonObject>() {
            @Override
            public void onNext(@NonNull JsonObject jsonObject) {
@@ -229,6 +246,14 @@ public class MainActivity extends AppCompatActivity {
                 .map( res -> {
                     Log.e("MainActivityAnish", "login: " + res );
                    return res;
+                });
+    }
+
+    public static Observable<JsonObject> login2(Context context, JsonObject req){
+        return ApiCore.send(context,MainApiContacts.APIName.User.Login2,MainUriContracts.URI_URLSCONTRACTS,req)
+                .map(res ->{
+                    Log.e("MainAct", "login2: " + res );
+                    return res;
                 });
     }
 }

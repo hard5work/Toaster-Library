@@ -4,6 +4,12 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/87f31e68a5b508262cd86aeaee29ffd3/jetified-jwtdecode-1.3.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/87f31e68a5b508262cd86aeaee29ffd3/jetified-jwtdecode-1.3.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/87f31e68a5b508262cd86aeaee29ffd3/jetified-jwtdecode-1.3.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a8528ca7f2b86bdaebe4d9f91c511a2c/jetified-jwtdecode-1.3.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a8528ca7f2b86bdaebe4d9f91c511a2c/jetified-jwtdecode-1.3.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a8528ca7f2b86bdaebe4d9f91c511a2c/jetified-jwtdecode-1.3.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9f8bf61e32fbb7c8d2d4a6add1697387/jetified-jwtdecode-1.3.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9f8bf61e32fbb7c8d2d4a6add1697387/jetified-jwtdecode-1.3.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9f8bf61e32fbb7c8d2d4a6add1697387/jetified-jwtdecode-1.3.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.auth0.android/jwtdecode/1.3.0/49e470219560f46b306b010ca0c23b1426220e20/jwtdecode-1.3.0-javadoc.jar!/" />

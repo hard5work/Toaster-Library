@@ -84,6 +84,9 @@ public class ApiCore {
     public static  Observable<JsonObject> send(Context context,String urlName, JsonObject req){
         RequestMeta meta = getRequestMeta(urlName);
         return requestFactory(context,meta,req);
+    }   public static  Observable<JsonObject> send(Context context,String urlName, String className, JsonObject req){
+        RequestMeta meta = getRequestMeta(className,urlName);
+        return requestFactory(context,meta,req);
     }
 
     private static Observable<JsonObject> requestFactory(Context context,RequestMeta meta, JsonObject req){
@@ -151,6 +154,16 @@ public class ApiCore {
         RequestMeta meta;
         try{
             meta = (RequestMeta) Reflect.invokeStaticeNoVerify(UriContracts.URI_URLSCONTRACTS,"Urls",urlName);
+            if (meta== null) throw new Exception("Null meta; RequestMeta was probably not defined");
+            return meta;
+        }catch (Exception e){
+            throw new Error("No RequestMeta with name " + urlName + " found. ");
+        }
+    }
+    private static RequestMeta getRequestMeta(String urlName,String clazzName ){
+        RequestMeta meta;
+        try{
+            meta = (RequestMeta) Reflect.invokeStaticeNoVerify(clazzName,"Urls",urlName);
             if (meta== null) throw new Exception("Null meta; RequestMeta was probably not defined");
             return meta;
         }catch (Exception e){
